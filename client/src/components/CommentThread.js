@@ -1,7 +1,11 @@
 import React from "react";
 import Comment from "./Comment";
 
-const CommentThread = ({ comment }) => {
+const CommentThread = ({ comment, onMoreReplies }) => {
+  const handleMoreReplies = (e) => {
+    e.preventDefault();
+    onMoreReplies(comment.id);
+  };
   return (
     <div className="parent-comment">
       <Comment {...comment} />
@@ -9,9 +13,11 @@ const CommentThread = ({ comment }) => {
         {comment.replies.map((reply) => {
           return <Comment key={reply.id} {...reply} />;
         })}
-        <a href="#" className="show_more">
-          Show More Replies ({comment.replies_count - 1})
-        </a>
+        {comment.replies_count === comment.replies.length ? null : (
+          <a href="#" onClick={handleMoreReplies} className="show_more">
+            Show More Replies ({comment.replies_count - 1})
+          </a>
+        )}
       </div>
     </div>
   );
