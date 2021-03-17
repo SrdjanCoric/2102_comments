@@ -3,7 +3,7 @@ import moment from "moment";
 
 const Comment = ({ author, postedAt, body }) => {
   return (
-    <div className="comment">
+    <div data-testid="comment" className="comment">
       <hr />
       <div className="image">
         <img src="/images/no-user-image.gif" alt="" />

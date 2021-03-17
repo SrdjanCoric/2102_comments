@@ -9,7 +9,7 @@ const CommentThread = ({ comment, onMoreReplies }) => {
   return (
     <div className="parent-comment">
       <Comment {...comment} />
-      <div className="replies">
+      <div data-testid="replies" className="replies">
         {comment.replies.map((reply) => {
           return <Comment key={reply.id} {...reply} />;
         })}
