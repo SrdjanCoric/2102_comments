@@ -341,5 +341,53 @@
     "postedAt": 1616082357803,
     "replies_count": 0,
     "replies": []
+  },
+  {
+    "author": "Srdjan",
+    "body": "Redux thunk",
+    "id": "49ffc3ac-745f-4d1b-b627-56b85c94746f",
+    "postedAt": 1616167497342,
+    "replies_count": 0,
+    "replies": []
+  },
+  {
+    "author": "Srdja",
+    "body": "nnn",
+    "id": "e7a9baed-5020-4f97-9770-ce49d7ffcf11",
+    "postedAt": 1616169247224,
+    "replies_count": 0,
+    "replies": []
+  },
+  {
+    "author": "sdasdas",
+    "body": "asda",
+    "id": "6ee4b26c-fd9c-4647-8398-fa182e107151",
+    "postedAt": 1616169317512,
+    "replies_count": 0,
+    "replies": []
+  },
+  {
+    "author": "asda",
+    "body": "asda",
+    "id": "e1d14e9a-fc21-4c76-8b9a-982f867b2f10",
+    "postedAt": 1616169347412,
+    "replies_count": 0,
+    "replies": []
+  },
+  {
+    "author": "asdasd",
+    "body": "asdas",
+    "id": "7422b1fe-9a15-418c-8bbd-22ed59eb3415",
+    "postedAt": 1616169370816,
+    "replies_count": 0,
+    "replies": []
+  },
+  {
+    "author": "adasd",
+    "body": "ada",
+    "id": "d6c9a271-e2cb-418a-934d-871080e7adc4",
+    "postedAt": 1616169412842,
+    "replies_count": 0,
+    "replies": []
   }
 ]

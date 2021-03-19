@@ -1,25 +1,11 @@
 import React from "react";
-import axios from "axios";
 import Comment from "./Comment";
-import { useDispatch, useSelector } from "react-redux";
-import { addReplies } from "../actions/replyActions";
 
-const CommentThread = ({ comment }) => {
-  const dispatch = useDispatch();
-
-  const replies = useSelector((state) => state.replies).filter(
-    (reply) => reply.comment_id === comment.id
-  );
+const CommentThread = ({ comment, replies, onMoreReplies }) => {
   const handleMoreReplies = (e) => {
     e.preventDefault();
     let id = comment.id;
-    axios
-      .get(`/api/comment_replies?comment_id=${id}`)
-      .then((res) => res.data)
-      .then((replies) => {
-        dispatch(addReplies(replies, id));
-      })
-      .catch((err) => console.log(err));
+    onMoreReplies(id);
   };
 
   return (

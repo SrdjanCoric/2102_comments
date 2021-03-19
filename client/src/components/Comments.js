@@ -1,38 +1,32 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import CommentThread from "./CommentThread";
-import { commentsReceived } from "../actions/commentActions";
+import React from "react";
+import CommentThreadContainer from "./CommentThreadContainer";
 
-const Comments = ({ onMoreReplies }) => {
-  const dispatch = useDispatch();
+class Comments extends React.Component {
+  componentDidMount() {
+    this.props.onFetchComments();
+  }
+  render() {
+    return (
+      <div className="comments">
+        <h2>Comments ({this.props.comments.length})</h2>
+        {this.props.comments.map((comment) => {
+          return <CommentThreadContainer key={comment.id} comment={comment} />;
+        })}
+      </div>
+    );
+  }
+}
 
-  const comments = useSelector((state) => state.comments);
+// const Comments = ({ onMoreReplies }) => {
+//   const dispatch = useDispatch();
 
-  useEffect(() => {
-    axios
-      .get("/api/comments")
-      .then((res) => res.data)
-      .then((comments) => {
-        dispatch(commentsReceived(comments));
-      });
-  }, []);
-  // action.payload.comments
+//   const comments = useSelector((state) => state.comments);
 
-  return (
-    <div className="comments">
-      <h2>Comments ({comments.length})</h2>
-      {comments.map((comment) => {
-        return (
-          <CommentThread
-            key={comment.id}
-            comment={comment}
-            onMoreReplies={onMoreReplies}
-          />
-        );
-      })}
-    </div>
-  );
-};
+//   useEffect(() => {
+//     dispatch(commentsReceived());
+//   }, []);
+//   // action.payload.comments
+
+// };
 
 export default Comments;

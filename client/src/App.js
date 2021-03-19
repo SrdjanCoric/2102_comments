@@ -1,12 +1,12 @@
 import React from "react";
-import Comments from "./components/Comments";
-import CommentForm from "./components/CommentForm";
+import CommentsContainer from "./components/CommentsContainer";
+import CommentFormContainer from "./components/CommentFormContainer";
 
 function App() {
   return (
     <div>
-      <Comments />
-      <CommentForm />
+      <CommentsContainer />
+      <CommentFormContainer />
     </div>
   );
 }
